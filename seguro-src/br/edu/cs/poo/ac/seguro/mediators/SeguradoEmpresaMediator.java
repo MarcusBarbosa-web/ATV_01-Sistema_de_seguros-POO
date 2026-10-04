@@ -27,7 +27,7 @@ public class SeguradoEmpresaMediator {
             return "CNPJ deve ter 14 caracteres";
         }
         if (!ValidadorCpfCnpj.ehCnpjValido(cnpj)) {
-            return "CNPJ com dígito inválido";
+            return "CNPJ com d\u00edgito inv\u00e1lido";
         }
         return null;
     }
@@ -72,7 +72,7 @@ public class SeguradoEmpresaMediator {
             return msg;
         }
         if (dao.buscar(seg.getCnpj()) != null) {
-            return "CNPJ do segurado empresa já existente";
+            return "CNPJ do segurado empresa j\u00e1 existente";
         }
         dao.incluir(seg);
         return null;
@@ -84,7 +84,7 @@ public class SeguradoEmpresaMediator {
             return msg;
         }
         if (dao.buscar(seg.getCnpj()) == null) {
-            return "CNPJ do segurado empresa não existente";
+            return "CNPJ do segurado empresa n\u00e3o existente";
         }
         dao.alterar(seg);
         return null;
@@ -92,7 +92,7 @@ public class SeguradoEmpresaMediator {
 
     public String excluirSeguradoEmpresa(String cnpj) {
         if (dao.buscar(cnpj) == null) {
-            return "CNPJ do segurado empresa não existente";
+            return "CNPJ do segurado empresa n\u00e3o existente";
         }
         dao.excluir(cnpj);
         return null;
